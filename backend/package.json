@@ -9,7 +9,6 @@
     "start": "node src/index.js"
   },
   "dependencies": {
-    "@anthropic-ai/sdk": "^0.24.3",
     "@supabase/supabase-js": "^2.43.1",
     "cors": "^2.8.5",
     "dotenv": "^16.4.5",

@@ -1,6 +1,6 @@
 # 🎬 ReelRecipes
 
-Extract structured recipes from cooking videos — YouTube, TikTok, Instagram Reels, or uploaded files. AI-powered extraction via Claude, stored in Supabase, with a clean React UI.
+Extract structured recipes from cooking videos — YouTube, TikTok, Instagram Reels, or uploaded files. AI-powered extraction via OpenAI, stored in Supabase, with a clean React UI.
 
 ![ReelRecipes Screenshot](docs/screenshot.png)
 
@@ -8,7 +8,7 @@ Extract structured recipes from cooking videos — YouTube, TikTok, Instagram Re
 
 - 🔗 **Paste any video URL** — YouTube, TikTok, Instagram Reels
 - 📁 **Upload video files** — transcribed via OpenAI Whisper
-- 🤖 **AI extraction** — Claude parses transcripts into structured recipes
+- 🤖 **AI extraction** — OpenAI parses transcripts into structured recipes
 - 🧾 **Full recipe cards** — ingredients, step-by-step method, timers, notes
 - ⏱ **In-browser timers** — tap any step timer to start a countdown
 - ✅ **Checkable ingredients & steps** — cook-mode friendly
@@ -23,7 +23,7 @@ Extract structured recipes from cooking videos — YouTube, TikTok, Instagram Re
 | Frontend | React 18 + Vite + Tailwind CSS |
 | Backend | Node.js + Express |
 | Database | Supabase (Postgres + Auth + Storage) |
-| AI — extraction | Anthropic Claude (claude-sonnet-4) |
+| AI — extraction | OpenAI Responses API (gpt-4.1-mini) |
 | AI — transcription | OpenAI Whisper |
 | YouTube transcripts | `youtube-transcript` |
 | Monorepo | npm workspaces |
@@ -58,8 +58,7 @@ reelrecipes/
 
 - Node.js 18+
 - A [Supabase](https://supabase.com) project (free tier works)
-- An [Anthropic API key](https://console.anthropic.com)
-- An [OpenAI API key](https://platform.openai.com) (for video uploads)
+- An [OpenAI API key](https://platform.openai.com)
 
 ### 2. Clone & install
 
@@ -92,7 +91,6 @@ npm run dev
 Copy `.env.example` to `.env` and fill in:
 
 ```env
-ANTHROPIC_API_KEY=sk-ant-...
 OPENAI_API_KEY=sk-...
 SUPABASE_URL=https://xxxx.supabase.co
 SUPABASE_SERVICE_KEY=eyJ...
@@ -127,7 +125,7 @@ curl -X POST http://localhost:3001/api/extract \
 | Instagram Reels | User-supplied hint / 3rd-party API | Same as TikTok |
 | Uploaded video | OpenAI Whisper | Any common video format |
 
-For TikTok and Instagram, the app currently uses the user-provided description hint + Claude inference. To add full transcript support, integrate a scraper API (e.g. RapidAPI) in `backend/src/services/transcript.js`.
+For TikTok and Instagram, the app currently uses the user-provided description hint + OpenAI inference. To add full transcript support, integrate a scraper API (e.g. RapidAPI) in `backend/src/services/transcript.js`.
 
 ## Deployment
 
