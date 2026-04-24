@@ -1,4 +1,4 @@
-import { YoutubeTranscript } from 'youtube-transcript'
+import { YoutubeTranscript } from 'youtube-transcript/dist/youtube-transcript.esm.js'
 import OpenAI from 'openai'
 import fs from 'fs'
 
