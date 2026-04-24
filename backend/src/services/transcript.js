@@ -29,7 +29,7 @@ export async function transcribeFile(filePath) {
 
 /**
  * TikTok / Instagram — no public transcript API.
- * Returns the user-supplied hint so Claude can still infer the recipe.
+ * Returns the user-supplied hint so the extractor can still infer the recipe.
  * TODO: replace stub with a RapidAPI scraper call.
  */
 export async function getSocialTranscript(_url, hint = '') {
